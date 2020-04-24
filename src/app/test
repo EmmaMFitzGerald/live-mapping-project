@@ -1,0 +1,84 @@
+getCsvFile(): void {
+        this.http
+            .get(
+                "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
+            )
+            .pipe(
+                map((res) => {
+                    const lines = res.split("\n");
+
+                    const result = [];
+
+                    const headers = lines[0].split(",");
+                    console.log(headers);
+                    for (let i = 1; i < lines.length - 1; i++) {
+                        const obj = {};
+                        const currentline = lines[i].split(",");
+
+                        for (let j = 0; j < headers.length; j++) {
+                            obj[headers[j]] = currentline[j];
+                        }
+
+                        result.push(obj);
+                    }
+                    console.log(JSON.stringify(result)); // JSON
+                    this.JSONData = JSON.stringify(result); // save JSON}))
+                })
+            );
+    }
+    // printCoronaJson(): void {
+    //     console.log("in print");
+    //     forkJoin(
+    //         this.http.get(
+    //             "https://raw.githubusercontent.com/CDCgov/MicrobeTrace/master/data/counties.json"
+    //         ),
+    //         this.http.get("../assets/state-abreviationlist.json")
+    //     )
+    //         .pipe(
+    //             map((res: Array<any>) => {
+    //                 console.log(res);
+
+    //                 res[0]["features"].forEach((county) => {
+    //                     res[1].forEach((stateAbbrev) => {
+    //                         if (
+    //                             county.properties.state ===
+    //                             stateAbbrev.abbreviation
+    //                         ) {
+    //                             county.properties.fullState = stateAbbrev.name;
+    //                         }
+    //                     });
+    //                 });
+
+    //                 res[0]["features"].forEach((county) => {
+    //                     if (county.properties.fullState === "Louisiana") {
+    //                         county.properties.name = county.properties.name.slice(
+    //                             0,
+    //                             -7
+    //                         );
+    //                     }
+    //                 });
+
+    //                 res[0]["features"].forEach((county) => {
+    //                     if (county.properties.name === "new york") {
+    //                         county.properties.name = `${county.properties.name} City`;
+    //                     }
+    //                 });
+
+    //                 res[0]["features"].forEach((county) => {
+    //                     if (
+    //                         county.properties.name === "anchorage municipality"
+    //                     ) {
+    //                         county.properties.name = county.properties.name.slice(
+    //                             0,
+    //                             -13
+    //                         );
+    //                     }
+    //                 });
+
+    //                 console.log(res[0]);
+    //             })
+    //         )
+    //         .subscribe();
+    // }
+
+    
