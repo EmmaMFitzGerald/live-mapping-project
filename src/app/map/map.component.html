@@ -1,1 +1,29 @@
-<p>map works!</p>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+<body>
+<div class="map-page">
+    <div class="map" id="map" class="match-parent"></div>
+    <div class="data-window">      
+<div class="map-overlay top">
+    <div class="map-overlay-inner">
+  </div>
+  <div class="map-overlay top">
+    <div class="map-overlay-inner">
+    <h2>USA Corona Virus Data</h2>
+    <h3>Cases: {{ totalCases }}</h3>
+    <div class="map-overlay-inner">
+        <div id="caseLegend" class="caseLegend">
+        <div class="bar"></div>
+    </div>
+     </div>
+    <h3>Deaths: {{ totalDeaths }} </h3>
+    <div class="map-overlay-inner">
+        <div id="deathLegend" class="deathLegend">
+        <div class="bar"></div>
+    </div>
+     </div>
+    <div id="date">{{ date }}
+    <label id="dateSelector"></label>
+    <input (change)="filterDate()" id="slider" type="range" min="18280" max="{{ today }}" step="1" value="18280" />
+   </div>   
+    </div>
+    </div>

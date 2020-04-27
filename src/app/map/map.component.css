@@ -1,0 +1,41 @@
+body {
+    font-family: 'Noto Serif', serif;
+}
+
+.map-page {
+    display: flex;
+}
+
+#map {
+    width: 75%;
+    height: 650px;
+}
+
+.data-window {
+    width: 25%;
+    height: 650px;
+    margin-left: 15px;
+}
+
+.map-overlay-inner .caseLegend .bar {
+    height: 10px;
+    width: 90%;
+    background: linear-gradient(to right, #4d4dff,  #00001a);
+    }
+    
+.map-overlay-inner .deathLegend .bar {
+        height: 10px;
+        width: 90%;
+        background: linear-gradient(to right, #FF0000, #880000);
+        }
+
+#slider {
+    width: 90%;
+    height: 15px;
+    border-radius: 5px; 
+    margin-top: 10px;
+}
+
+#date {
+    margin-top: 30px;
+}
