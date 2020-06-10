@@ -1,4 +1,4 @@
-# Live Coronavirus infection and death rate data displayed using Mapbox. 
+# Live Coronavirus infection and death rate data across the United States displayed using Mapbox. 
 
 Source of the data used is from the New York Times. 
 
